@@ -20,7 +20,6 @@ export default function transform(arr) {
   const doN = '--double-next';
   const doP = '--double-prev';
   let res = [...arr];
-  let i = 0;
   for (let i = 0; i < res.length;) {
     if ((res[i] === diP || res[i] === doP) && i === 0) res[i] = 0;
     else if ((res[i] === diN || res[i] === doN) && i === res.length - 1) res[i] = 0;
