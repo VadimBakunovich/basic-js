@@ -33,7 +33,7 @@ export default class VigenereCipheringMachine {
         cipher += str[i];
         continue;
       }
-      cipher += String.fromCharCode(((this.alph.indexOf(str[i]) + this.alph.indexOf(key[j])) % 26) + 65);
+      cipher += this.alph[(this.alph.indexOf(str[i]) + this.alph.indexOf(key[j])) % 26];
       if (j === key.length - 1) j = 0;
       else j++;
     }
@@ -49,7 +49,7 @@ export default class VigenereCipheringMachine {
         decription += str[i];
         continue;
       }
-      decription += String.fromCharCode(((this.alph.indexOf(str[i]) - this.alph.indexOf(key[j]) + 26) % 26) + 65);
+      decription += this.alph[(this.alph.indexOf(str[i]) - this.alph.indexOf(key[j]) + 26) % 26];
       if (j === key.length - 1) j = 0;
       else j++;
     }
